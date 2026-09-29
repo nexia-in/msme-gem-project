@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nexia Virtual Desk — MSME &amp; GeM Registration Data Collection. Your online application supporting team.">
+  <meta name="theme-color" content="#4f46e5">
+  <title>Nexia Virtual Desk — MSME &amp; GeM Registration Data Collection</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%234f46e5'/><text x='32' y='44' font-family='Arial, sans-serif' font-size='34' font-weight='700' fill='white' text-anchor='middle'>N</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Decorative background blobs (non-interactive) -->
+  <div class="bg-decor" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="logo" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="48" height="48">
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#6366f1"/>
+                <stop offset="1" stop-color="#0ea5e9"/>
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="44" height="44" rx="13" fill="url(#logoGrad)"/>
+            <path d="M15 33V15h4.6l8.8 12.4V15H34v18h-4.6L20.6 20.6V33H15z" fill="#ffffff"/>
+          </svg>
+        </span>
+        <div class="brand-text">
+          <h1>Nexia Virtual Desk</h1>
+          <p class="subtitle">MSME &amp; GeM Registration Data Collection</p>
+          <p class="supporting">Your online application supporting team</p>
+        </div>
+      </div>
+      <div class="save-row">
+        <span id="saveStatus" class="save-chip" role="status" aria-live="polite">
+          <svg id="saveIconReady" viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 3"/><path d="M10 6v4l2.5 2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <svg id="saveIconSaved" viewBox="0 0 20 20" width="15" height="15" aria-hidden="true" hidden><circle cx="10" cy="10" r="8" fill="currentColor"/><path d="M6.2 10.2l2.6 2.6 5-5.4" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span id="saveStatusText">Ready to collect details</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ DISCLAIMER ============ -->
+  <div class="container">
+    <div class="disclaimer" role="note">
+      <span class="disclaimer-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 10.5v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="7.6" r="1.2" fill="currentColor"/></svg>
+      </span>
+      <div class="disclaimer-text">
+        <strong>Nexia Data Collection Page</strong>
+        <p>This is not an official MSME, GeM, or Government website. This page is operated by Nexia Virtual Desk for collecting information required to provide online registration support.</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="main" class="container">
+    <form id="registrationForm" novalidate>
+
+      <!-- ============ SERVICE SELECTION ============ -->
+      <section class="card" aria-labelledby="heading-service">
+        <header class="section-head">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3l2.2 4.6 5 .7-3.6 3.5.9 5-4.5-2.4L7.5 16.8l.9-5L4.8 8.3l5-.7L12 3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          </span>
+          <div>
+            <h2 id="heading-service">Which registration do you need? <span class="ml">(ഏത് രജിസ്ട്രേഷൻ ആണ് വേണ്ടത്?)</span></h2>
+            <p class="section-sub">Select the registration you need support with.</p>
+          </div>
+        </header>
+
+        <div class="service-grid">
+          <label class="service-card" for="svc-msme">
+            <input type="radio" id="svc-msme" name="service" value="MSME Registration">
+            <span class="check-badge" aria-hidden="true">
+              <svg viewBox="0 0 20 20" width="13" height="13"><path d="M5.5 10.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 21V8l5-3v16M9 21V5l6 3v13M15 21V9l5 3v9M3 21h18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></svg>
+            </span>
+            <span class="service-title">MSME Registration</span>
+            <span class="service-sub">Micro, Small &amp; Medium Enterprise</span>
+          </label>
+
+          <label class="service-card" for="svc-gem">
+            <input type="radio" id="svc-gem" name="service" value="GeM Registration">
+            <span class="check-badge" aria-hidden="true">
+              <svg viewBox="0 0 20 20" width="13" height="13"><path d="M5.5 10.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M4 7h16l-1.5 12.5a1.5 1.5 0 01-1.5 1.3H7a1.5 1.5 0 01-1.5-1.3L4 7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.5 9V6a3.5 3.5 0 017 0v3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <span class="service-title">GeM Registration</span>
+            <span class="service-sub">Government e-Marketplace</span>
+          </label>
+
+          <label class="service-card" for="svc-both">
+            <input type="radio" id="svc-both" name="service" value="MSME + GeM Registration">
+            <span class="check-badge" aria-hidden="true">
+              <svg viewBox="0 0 20 20" width="13" height="13"><path d="M5.5 10.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3l9 5-9 5-9-5 9-5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M3 13l9 5 9-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="service-title">Both MSME + GeM</span>
+            <span class="service-sub">Register for both together</span>
+          </label>
+        </div>
+        <p class="field-error" id="err-service"></p>
+      </section>
+
+      <!-- ============ PERSONAL & IDENTITY ============ -->
+      <section class="card" aria-labelledby="heading-personal">
+        <header class="section-head">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="9" cy="11" r="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M5.8 16.5c.6-1.6 1.8-2.4 3.2-2.4s2.6.8 3.2 2.4M14 9.5h4M14 12.5h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </span>
+          <div>
+            <h2 id="heading-personal">Personal &amp; Identity Details</h2>
+            <p class="section-sub">വ്യക്തിഗത വിവരങ്ങൾ</p>
+          </div>
+        </header>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="aadhaar">Aadhaar Number <span class="ml">(ആധാർ നമ്പർ)</span></label>
+            <input type="text" id="aadhaar" name="aadhaar" inputmode="numeric" autocomplete="off" maxlength="12" placeholder="12-digit Aadhaar number" aria-describedby="err-aadhaar">
+            <p class="field-error" id="err-aadhaar"></p>
+          </div>
+
+          <div class="field">
+            <label for="nameAadhaar">Name as per Aadhaar <span class="ml">(ആധാർ പ്രകാരമുള്ള പേര്)</span></label>
+            <input type="text" id="nameAadhaar" name="nameAadhaar" autocomplete="name" placeholder="Full name as on Aadhaar" aria-describedby="err-nameAadhaar">
+            <p class="field-error" id="err-nameAadhaar"></p>
+          </div>
+
+          <div class="field">
+            <label for="pan">PAN Card Number <span class="ml">(പാൻ കാർഡ് നമ്പർ)</span></label>
+            <input type="text" id="pan" name="pan" autocomplete="off" maxlength="10" placeholder="ABCDE1234F" style="text-transform:uppercase" aria-describedby="err-pan">
+            <p class="field-error" id="err-pan"></p>
+          </div>
+
+          <div class="field">
+            <label for="namePan">Name as per PAN <span class="ml">(പാൻ പ്രകാരമുള്ള പേര്)</span></label>
+            <input type="text" id="namePan" name="namePan" autocomplete="name" placeholder="Full name as on PAN" aria-describedby="err-namePan">
+            <p class="field-error" id="err-namePan"></p>
+          </div>
+
+          <div class="field field-full">
+            <label for="dob">Date of Birth as per PAN <span class="ml">(പാൻ പ്രകാരമുള്ള ജനനത്തീയതി)</span></label>
+            <input type="date" id="dob" name="dob" autocomplete="bday" aria-describedby="err-dob">
+            <p class="field-error" id="err-dob"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ BUSINESS DETAILS ============ -->
+      <section class="card" aria-labelledby="heading-business">
+        <header class="section-head">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><rect x="3" y="8" width="18" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9 8V5.5A1.5 1.5 0 0110.5 4h3A1.5 1.5 0 0115 5.5V8M3 13h18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="13" r="1.4" fill="currentColor"/></svg>
+          </span>
+          <div>
+            <h2 id="heading-business">Business Details</h2>
+            <p class="section-sub">സ്ഥാപന വിവരങ്ങൾ</p>
+          </div>
+        </header>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="enterprise">Name of Enterprise / Business Name <span class="ml">(സ്ഥാപനത്തിന്റെ പേര്)</span></label>
+            <input type="text" id="enterprise" name="enterprise" autocomplete="organization" placeholder="Registered business name" aria-describedby="err-enterprise">
+            <p class="field-error" id="err-enterprise"></p>
+          </div>
+
+          <div class="field">
+            <label for="orgType">Type of Organization <span class="ml">(സ്ഥാപനത്തിന്റെ തരം)</span></label>
+            <select id="orgType" name="orgType" autocomplete="organization-title" aria-describedby="err-orgType">
+              <option value="" disabled selected>Select type</option>
+              <option value="Proprietary">Proprietary</option>
+              <option value="Partnership">Partnership</option>
+              <option value="Pvt Ltd">Pvt Ltd</option>
+            </select>
+            <p class="field-error" id="err-orgType"></p>
+          </div>
+
+          <div class="field">
+            <label for="mobile">Mobile Number — Aadhaar linked <span class="ml">(മൊബൈൽ നമ്പർ)</span></label>
+            <input type="tel" id="mobile" name="mobile" inputmode="numeric" autocomplete="tel" maxlength="10" placeholder="10-digit mobile number" aria-describedby="err-mobile">
+            <p class="field-error" id="err-mobile"></p>
+          </div>
+
+          <div class="field">
+            <label for="email">Email ID <span class="ml">(ഇമെയിൽ ഐഡി)</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" aria-describedby="err-email">
+            <p class="field-error" id="err-email"></p>
+          </div>
+
+          <div class="field">
+            <label for="socialCategory">Social Category <span class="ml">(സാമൂഹിക വിഭാഗം)</span></label>
+            <select id="socialCategory" name="socialCategory" autocomplete="off" aria-describedby="err-socialCategory">
+              <option value="" disabled selected>Select category</option>
+              <option value="General">General</option>
+              <option value="OBC">OBC</option>
+              <option value="SC">SC</option>
+              <option value="ST">ST</option>
+            </select>
+            <p class="field-error" id="err-socialCategory"></p>
+          </div>
+
+          <div class="field">
+            <label for="gender">Gender <span class="ml">(ലിംഗം)</span></label>
+            <select id="gender" name="gender" autocomplete="off" aria-describedby="err-gender">
+              <option value="" disabled selected>Select gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+            <p class="field-error" id="err-gender"></p>
+          </div>
+
+          <fieldset class="field field-full radio-fieldset">
+            <legend>Specially Abled? <span class="ml">(ഭിന്നശേഷി ഉണ്ടോ?)</span></legend>
+            <div class="radio-row">
+              <label class="radio-pill">
+                <input type="radio" name="speciallyAbled" value="Yes">
+                <span class="radio-dot" aria-hidden="true"></span>
+                <span>Yes</span>
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="speciallyAbled" value="No">
+                <span class="radio-dot" aria-hidden="true"></span>
+                <span>No</span>
+              </label>
+            </div>
+            <p class="field-error" id="err-speciallyAbled"></p>
+          </fieldset>
+        </div>
+      </section>
+
+      <!-- ============ OFFICIAL ADDRESS ============ -->
+      <section class="card" aria-labelledby="heading-address">
+        <header class="section-head">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 21s7-5.6 7-11a7 7 0 10-14 0c0 5.4 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+          </span>
+          <div>
+            <h2 id="heading-address">Full Official Address <span class="ml">(പൂർണ്ണ ഔദ്യോഗിക വിലാസം)</span></h2>
+            <p class="section-sub">Registered office address of the enterprise</p>
+          </div>
+        </header>
+
+        <div class="form-grid">
+          <div class="field field-full">
+            <label for="bldg">Building Name / Number <span class="ml">(കട്ടിടം)</span></label>
+            <input type="text" id="bldg" name="bldg" autocomplete="address-line1" placeholder="Building name or number">
+            <p class="field-error" id="err-bldg"></p>
+          </div>
+
+          <div class="field field-full">
+            <label for="street">Street <span class="ml">(സ്ട്രീറ്റ്)</span></label>
+            <input type="text" id="street" name="street" autocomplete="address-line2" placeholder="Street / road name">
+            <p class="field-error" id="err-street"></p>
+          </div>
+
+          <div class="field">
+            <label for="town">Town <span class="ml">(നഗരം)</span></label>
+            <input type="text" id="town" name="town" autocomplete="address-level2" placeholder="Town / municipality">
+            <p class="field-error" id="err-town"></p>
+          </div>
+
+          <div class="field">
+            <label for="pin">PIN <span class="ml">(പിൻ കോഡ്)</span></label>
+            <input type="text" id="pin" name="pin" inputmode="numeric" autocomplete="postal-code" maxlength="6" placeholder="6-digit PIN">
+            <p class="field-error" id="err-pin"></p>
+          </div>
+
+          <div class="field">
+            <label for="district">District <span class="ml">(ജില്ല)</span></label>
+            <input type="text" id="district" name="district" autocomplete="address-level1" placeholder="District">
+            <p class="field-error" id="err-district"></p>
+          </div>
+
+          <div class="field">
+            <label for="state">State <span class="ml">(സംസ്ഥാനം)</span></label>
+            <input type="text" id="state" name="state" autocomplete="address-level1" value="Kerala">
+            <p class="field-error" id="err-state"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ BUSINESS INFORMATION ============ -->
+      <section class="card" aria-labelledby="heading-bizinfo">
+        <header class="section-head">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div>
+            <h2 id="heading-bizinfo">Business Information</h2>
+            <p class="section-sub">ബിസിനസ് വിവരങ്ങൾ</p>
+          </div>
+        </header>
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="commenceDate">Date of Commencement of Business <span class="ml">(ബിസിനസ് ആരംഭിച്ച തീയതി)</span></label>
+            <input type="date" id="commenceDate" name="commenceDate" autocomplete="off" aria-describedby="err-commenceDate">
+            <p class="field-error" id="err-commenceDate"></p>
+          </div>
+
+          <div class="field">
+            <label for="majorActivity">Major Activity <span class="ml">(പ്രധാന പ്രവർത്തനം)</span></label>
+            <select id="majorActivity" name="majorActivity" autocomplete="off" aria-describedby="err-majorActivity">
+              <option value="" disabled selected>Select activity</option>
+              <option value="Manufacturing">Manufacturing</option>
+              <option value="Services">Services</option>
+              <option value="Trading">Trading</option>
+            </select>
+            <p class="field-error" id="err-majorActivity"></p>
+          </div>
+
+          <div class="field">
+            <label for="investment">Investment Amount in Rs <span class="ml">(നിക്ഷേപ തുക)</span></label>
+            <input type="text" id="investment" name="investment" inputmode="numeric" autocomplete="off" placeholder="Amount in ₹">
+            <p class="field-error" id="err-investment"></p>
+          </div>
+
+          <div class="field">
+            <label for="turnover">Annual Turnover in Rs <span class="ml">(വാർഷിക ടേൺഓവർ)</span></label>
+            <input type="text" id="turnover" name="turnover" inputmode="numeric" autocomplete="off" placeholder="Amount in ₹">
+            <p class="field-error" id="err-turnover"></p>
+          </div>
+
+          <div class="field field-full">
+            <label for="natureOfWork">Nature of Work / Details <span class="ml">(ജോലിയുടെ സ്വഭാവം / വിശദാംശങ്ങൾ)</span></label>
+            <textarea id="natureOfWork" name="natureOfWork" rows="3" placeholder="Briefly describe your nature of work"></textarea>
+            <p class="field-error" id="err-natureOfWork"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ EMPLOYEE DETAILS ============ -->
+      <section class="card" aria-labelledby="heading-employees">
+        <header class="section-head">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 19c.7-3 2.9-4.5 5.5-4.5s4.8 1.5 5.5 4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="17" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M16 14.6c2.3.2 3.8 1.6 4.3 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </span>
+          <div>
+            <h2 id="heading-employees">Number of Employees <span class="ml">(ജീവനക്കാരുടെ എണ്ണം)</span></h2>
+            <p class="section-sub">Total is calculated automatically</p>
+          </div>
+        </header>
+
+        <div class="form-grid employee-grid">
+          <div class="field">
+            <label for="maleEmp">Male Employees <span class="ml">(പുരുഷ ജീവനക്കാർ)</span></label>
+            <input type="text" id="maleEmp" name="maleEmp" inputmode="numeric" autocomplete="off" placeholder="0">
+            <p class="field-error" id="err-maleEmp"></p>
+          </div>
+
+          <div class="field">
+            <label for="femaleEmp">Female Employees <span class="ml">(സ്ത്രീ ജീവനക്കാർ)</span></label>
+            <input type="text" id="femaleEmp" name="femaleEmp" inputmode="numeric" autocomplete="off" placeholder="0">
+            <p class="field-error" id="err-femaleEmp"></p>
+          </div>
+
+          <div class="field field-full">
+            <label for="totalEmp">Total Employees <span class="ml">(ആകെ ജീവനക്കാർ)</span></label>
+            <input type="text" id="totalEmp" name="totalEmp" readonly tabindex="-1" aria-live="polite" placeholder="0">
+            <p class="field-hint">Male + Female (calculated automatically)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ BANK DETAILS ============ -->
+      <section class="card" aria-labelledby="heading-bank">
+        <header class="section-head">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 9.5L12 4l9 5.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M4.5 10.5V19M9.5 10.5V19M14.5 10.5V19M19.5 10.5V19M3 19.5h18M2.5 21.5h19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </span>
+          <div>
+            <h2 id="heading-bank">Bank Details</h2>
+            <p class="section-sub">ബാങ്ക് വിവരങ്ങൾ</p>
+          </div>
+        </header>
+
+        <div class="form-grid">
+          <div class="field field-full">
+            <label for="bankName">Bank Name <span class="ml">(ബാങ്കിന്റെ പേര്)</span></label>
+            <input type="text" id="bankName" name="bankName" autocomplete="off" placeholder="Name of your bank">
+            <p class="field-error" id="err-bankName"></p>
+          </div>
+
+          <div class="field">
+            <label for="accountNo">Account Number <span class="ml">(അക്കൗണ്ട് നമ്പർ)</span></label>
+            <input type="text" id="accountNo" name="accountNo" inputmode="numeric" autocomplete="off" placeholder="Bank account number">
+            <p class="field-error" id="err-accountNo"></p>
+          </div>
+
+          <div class="field">
+            <label for="ifsc">IFSC Code <span class="ml">(IFSC കോഡ്)</span></label>
+            <input type="text" id="ifsc" name="ifsc" autocomplete="off" maxlength="11" placeholder="SBIN0000001" style="text-transform:uppercase">
+            <p class="field-error" id="err-ifsc"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ GST DETAILS ============ -->
+      <section class="card" aria-labelledby="heading-gst">
+        <header class="section-head">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 3h12l-1.4 17a1.6 1.6 0 01-1.6 1.4H9a1.6 1.6 0 01-1.6-1.4L6 3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M7.4 8.5h9.2M7.7 13h8.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </span>
+          <div>
+            <h2 id="heading-gst">GST Details</h2>
+            <p class="section-sub">GSTIN വിവരങ്ങൾ</p>
+          </div>
+        </header>
+
+        <fieldset class="field radio-fieldset">
+          <legend>Do you have GSTIN? <span class="ml">(GSTIN ഉണ്ടോ?)</span></legend>
+          <div class="radio-row">
+            <label class="radio-pill">
+              <input type="radio" name="gst" value="yes">
+              <span class="radio-dot" aria-hidden="true"></span>
+              <span>Yes</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="gst" value="no">
+              <span class="radio-dot" aria-hidden="true"></span>
+              <span>No</span>
+            </label>
+          </div>
+          <p class="field-error" id="err-gst"></p>
+        </fieldset>
+
+        <div class="conditional" id="gstinField">
+          <div class="field">
+            <label for="gstin">GSTIN Number <span class="ml">(GSTIN നമ്പർ)</span></label>
+            <input type="text" id="gstin" name="gstin" autocomplete="off" maxlength="15" placeholder="15-character GSTIN" style="text-transform:uppercase" aria-describedby="err-gstin">
+            <p class="field-error" id="err-gstin"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ DOCUMENT CHECKLIST ============ -->
+      <section class="card" aria-labelledby="heading-docs">
+        <header class="section-head">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M7 3h7l4 4v13a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 016 20V4.5A1.5 1.5 0 017.5 3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 3v4h4M9.5 13l2 2 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div>
+            <h2 id="heading-docs">Document Checklist <span class="ml">(രേഖകളുടെ പട്ടിക)</span></h2>
+            <p class="section-sub">Please send clear photos/PDFs of the following documents to our WhatsApp</p>
+          </div>
+        </header>
+
+        <div class="check-list" role="group" aria-labelledby="heading-docs">
+          <label class="check-item">
+            <input type="checkbox" class="visually-hidden" name="docs" value="Aadhaar Card" id="docAadhaar">
+            <span class="check-box" aria-hidden="true"><svg viewBox="0 0 20 20" width="12" height="12"><path d="M5.5 10.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="check-text">Aadhaar Card</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" class="visually-hidden" name="docs" value="PAN Card" id="docPan">
+            <span class="check-box" aria-hidden="true"><svg viewBox="0 0 20 20" width="12" height="12"><path d="M5.5 10.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="check-text">PAN Card</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" class="visually-hidden" name="docs" value="Bank Passbook / Cancelled Cheque" id="docBank">
+            <span class="check-box" aria-hidden="true"><svg viewBox="0 0 20 20" width="12" height="12"><path d="M5.5 10.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span class="check-text">Bank Passbook / Cancelled Cheque</span>
+          </label>
+        </div>
+        <p class="field-error" id="err-docs"></p>
+      </section>
+
+      <!-- ============ DECLARATION ============ -->
+      <section class="card" aria-labelledby="heading-declaration">
+        <header class="section-head">
+          <span class="section-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6L12 3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 11.8l2.2 2.2 4-4.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div>
+            <h2 id="heading-declaration">Declaration <span class="ml">(പ്രഖ്യാപനം)</span></h2>
+          </div>
+        </header>
+
+        <label class="check-item declaration-item">
+          <input type="checkbox" class="visually-hidden" id="declaration" name="declaration">
+          <span class="check-box" aria-hidden="true"><svg viewBox="0 0 20 20" width="12" height="12"><path d="M5.5 10.5l3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="check-text">I agree to send these selected documents via WhatsApp for registration purposes.</span>
+        </label>
+        <p class="field-error" id="err-declaration"></p>
+      </section>
+
+      <!-- ============ ACTIONS ============ -->
+      <div class="actions" role="group" aria-label="Form actions">
+        <button type="button" class="btn btn-primary" id="btnDownload">
+          <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 4v10m0 0l-4-4m4 4l4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Download Details</span>
+        </button>
+        <button type="button" class="btn btn-wa" id="btnWhatsApp">
+          <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M12 3a9 9 0 00-7.8 13.5L3 21l4.7-1.2A9 9 0 1012 3z" fill="currentColor"/><path d="M8.8 7.6c.3-.7.6-.7.9-.7h.7c.2 0 .5 0 .7.6l.9 2c.1.3.1.5 0 .8l-.4.6c-.1.2-.3.3-.1.6.5.9 1.3 1.7 2.2 2.2.3.2.4 0 .6-.1l.6-.4c.3-.2.5-.1.8 0l2 .9c.3.2.5.4.5.7v.7c0 .3 0 .6-.7.9-.6.3-1.6.5-3.6-.5-2.5-1.2-4.6-3.4-5.6-5.4-.7-1.5-.5-2.7.1-3.5z" fill="#fff"/></svg>
+          <span>Send via WhatsApp</span>
+        </button>
+        <button type="button" class="btn btn-ghost" id="btnReset">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 10a8 8 0 111.5 6.5M4 10V4m0 6h6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Reset Form</span>
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <!-- ============ PROMOTIONAL ADVERTISEMENT ============ -->
+  <section class="container" aria-labelledby="promo-heading">
+    <div class="promo">
+      <span class="promo-shine" aria-hidden="true"></span>
+      <div class="promo-badge" aria-hidden="true">16&nbsp;YEARS</div>
+      <div class="promo-content">
+        <p class="promo-eyebrow">Nexia Virtual Desk</p>
+        <h2 class="promo-title" id="promo-heading">Need Online Application Support?</h2>
+        <p class="promo-tagline">Your online application supporting team</p>
+        <p class="promo-text">From online applications to document preparation, CV creation and printing support, Nexia Virtual Desk helps you complete your digital work with ease.</p>
+        <p class="promo-services">Online Applications • CV / Resume • Document Processing • Printing &amp; Scanning</p>
+        <p class="promo-location">
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 10-14 0c0 5.4 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+          Olarikkara, Thrissur
+        </p>
+        <a class="btn btn-promo-cta" href="https://wa.me/919961850698" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3a9 9 0 00-7.8 13.5L3 21l4.7-1.2A9 9 0 1012 3z" fill="currentColor"/><path d="M8.8 7.6c.3-.7.6-.7.9-.7h.7c.2 0 .5 0 .7.6l.9 2c.1.3.1.5 0 .8l-.4.6c-.1.2-.3.3-.1.6.5.9 1.3 1.7 2.2 2.2.3.2.4 0 .6-.1l.6-.4c.3-.2.5-.1.8 0l2 .9c.3.2.5.4.5.7v.7c0 .3 0 .6-.7.9-.6.3-1.6.5-3.6-.5-2.5-1.2-4.6-3.4-5.6-5.4-.7-1.5-.5-2.7.1-3.5z" fill="#fff"/></svg>
+          <span>Need another service? Contact Nexia Virtual Desk</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">Nexia Virtual Desk</p>
+      <p class="footer-line">Olarikkara, Thrissur</p>
+      <p class="footer-line">Your online application supporting team</p>
+      <p class="footer-line">Online Applications | CV Creation | Document Processing | Printing &amp; Scanning</p>
+      <p class="footer-line">Since 2009</p>
+      <p class="footer-copy">© 2009–2026 Nexia Virtual Desk</p>
+    </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Nexia Virtual Desk - Olarikkara, Thrissur | Online Applications | CV Creation | Document Processing | Printing &amp; Scanning | Since 2009 | Contact: +91 9961850698</span>
+        <span>Nexia Virtual Desk - Olarikkara, Thrissur | Online Applications | CV Creation | Document Processing | Printing &amp; Scanning | Since 2009 | Contact: +91 9961850698</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ RESET CONFIRMATION MODAL ============ -->
+  <div class="modal-overlay" id="resetModal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalMessage">
+      <span class="modal-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="26" height="26"><path d="M12 4.5a7.5 7.5 0 11-6.4 3.6M4.5 9V4.5M4.5 9H9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <h2 class="modal-title" id="modalTitle">Reset Form?</h2>
+      <p class="modal-message" id="modalMessage">Are you sure you want to reset this form? All entered and browser-saved information will be cleared from this browser.</p>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" id="modalCancel">Cancel</button>
+        <button type="button" class="btn btn-danger" id="modalConfirm">Reset Form</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TOAST ============ -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

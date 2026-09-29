@@ -343,8 +343,34 @@
     return value.replace(/\D/g, '');
   }
 
-  function lettersUpperOnly(value) {
-    return value.replace(/[^a-zA-Z]/g, '').toUpperCase();
+  /**
+   * PAN mask: 5 letters + 4 digits + 1 letter (e.g. ABCDE1234F).
+   * Keeps the character the user typed only if it is valid for that position,
+   * so digits are accepted in slots 6–9 and rejected elsewhere.
+   */
+  function formatPan(value) {
+    var clean = value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+    var out = '';
+    for (var i = 0; i < clean.length && out.length < 10; i++) {
+      var ch = clean[i];
+      var pos = out.length;
+      if (pos < 5) {
+        if (/[A-Z]/.test(ch)) out += ch;      // slots 1–5: letters
+      } else if (pos < 9) {
+        if (/[0-9]/.test(ch)) out += ch;      // slots 6–9: digits
+      } else if (/[A-Z]/.test(ch)) {
+        out += ch;                            // slot 10: letter
+      }
+    }
+    return out;
+  }
+
+  // Brief shake so the user notices a rejected keystroke instead of wondering
+  function rejectFeedback(el) {
+    el.classList.remove('shake');
+    void el.offsetWidth; // restart the animation
+    el.classList.add('shake');
+    setTimeout(function () { el.classList.remove('shake'); }, 380);
   }
 
   function handleInputFormatting(e) {
@@ -355,9 +381,13 @@
       case 'aadhaar':
         el.value = digitsOnly(el.value).slice(0, 12);
         break;
-      case 'pan':
-        el.value = lettersUpperOnly(el.value).slice(0, 10);
+      case 'pan': {
+        var cleaned = el.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+        var masked = formatPan(el.value);
+        if (masked.length < cleaned.length) rejectFeedback(el);
+        el.value = masked;
         break;
+      }
       case 'mobile':
         el.value = digitsOnly(el.value).slice(0, 10);
         break;

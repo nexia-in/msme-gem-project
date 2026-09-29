@@ -428,6 +428,19 @@ textarea.invalid:focus {
   box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.12);
 }
 
+/* Rejected keystroke feedback (e.g. digit typed in a letter-only PAN slot) */
+@keyframes rejectShake {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-5px); }
+  40%      { transform: translateX(4px); }
+  60%      { transform: translateX(-3px); }
+  80%      { transform: translateX(2px); }
+}
+input.shake {
+  animation: rejectShake 0.34s ease;
+  border-color: var(--warn);
+}
+
 /* Readonly total field */
 input[readonly] {
   background: var(--primary-soft);
